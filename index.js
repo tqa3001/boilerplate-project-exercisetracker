@@ -53,7 +53,7 @@ app.post('/api/users/:_id/exercises', (req, res) => {
     date = new Date(); 
   let exercise = {
     description: req.body.description,
-    duration: req.body.duration,
+    duration: Number(req.body.duration), 
     date: date.toDateString() 
   }; 
   DB[_id].log.push(helpers.copy(exercise)); 
